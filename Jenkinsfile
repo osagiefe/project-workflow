@@ -25,7 +25,7 @@ pipeline{
             steps{
                
             sh 'docker images'
-            sh 'docker build . -t osagiefe/saturday:v1'
+            sh 'docker build . -t osagiefe/saturday:v2'
            }
         }
         
@@ -37,7 +37,7 @@ pipeline{
                  withCredentials([string(credentialsId: 'dockerID', variable: 'dockerID')]) {
                     sh 'docker login -u osagiefe -p ${dockerID}'
             }
-              sh 'docker push osagiefe/saturday:v1'
+              sh 'docker push osagiefe/saturday:v2'
             }
         }
 
