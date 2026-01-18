@@ -1,0 +1,24 @@
+{
+  "name": "project-workflow",
+  "version": "1.0.0",
+  "description": "End to end deployment of a nodejs application on an eks cluster using ansible and Jenkins pipeline",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osagiefe/project-workflow.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osagiefe/project-workflow/issues"
+  },
+  "homepage": "https://github.com/osagiefe/project-workflow#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
