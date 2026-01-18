@@ -22,8 +22,10 @@ terraform apply --auto-approve
 terraform destroy --auto-approve
 
 - AWS CLI
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" 
+sudo apt install unzip 
+unzip awscliv2.zip 
+sudo ./aws/install
 
 # AWS Configure (supply your credentials)
 aws configure 
@@ -60,7 +62,7 @@ eksctl version
 
 # Another command to creating the eks cluster
   eksctl create cluster \
-  --name eks-cluster-223 \
+  --name eks-cluster-113 \
   --version 1.29 \
   --region us-east-1 \
   --nodegroup-name ng-1 \
@@ -70,10 +72,10 @@ eksctl version
   --nodes-max 3
 
   # Update eks kubeconfig once k8s cluster is installed successfully
-aws eks update-kubeconfig --name eks-cluster-223 --region us-east-1
+aws eks update-kubeconfig --name eks-cluster-113 --region us-east-1
   
   # Get EKS Cluster service
-eksctl get cluster --name eks-cluster-223 --region us-east-1
+eksctl get cluster --name eks-cluster-113 --region us-east-1
 
 # create argocd namespace
 kubectl create namespace argocd
@@ -85,7 +87,7 @@ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/st
 # kubectl get pods -n argocd
 kubectl get pods -n argocd
 
-# Get argocd on the webbrowser by editing the service of LoadBalancer
+# Get argocd on the web browser by editing the service of LoadBalancer
 
 kubectl edit svc argocd-server -n argocd
 
